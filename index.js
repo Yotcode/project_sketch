@@ -4,6 +4,9 @@ containerDiv.id = 'container';
 document.body.appendChild(containerDiv);
 
 function createGrid(numDivs){
+    containerDiv.style.gridTemplateColumns = `repeat(${numDivs},1fr)`
+    containerDiv.style.gridTemplateRows = `repeat(${numDivs},1fr)`
+
     for (let rows = 0; rows < numDivs; rows++){
         for(let cols = 0; cols < numDivs; cols++){
             let cells = document.createElement('div');
@@ -26,4 +29,3 @@ let cells = document.querySelectorAll('.child');
 for (const cell of cells){
     cell.addEventListener('mouseover', pixelate);
 };
-
